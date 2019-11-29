@@ -25,12 +25,12 @@ int findLCSLength(string X,string Y)
 		{
 			if(X[i-1]==Y[j-1])
 			{
-				//Length from upper diagonal right box + 1
+				//Length from upper diagonal left box + 1
 				dp[i][j]=dp[i-1][j-1]+1;
 			}
 			else
 			{
-				//max of Length from upper  box or right box
+				//max of Length from upper  box or left box
 				dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
 			}
 		}
