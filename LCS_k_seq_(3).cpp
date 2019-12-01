@@ -13,12 +13,15 @@ int LengthLCS_3(string X,string Y,string Z)
 		{
 			for(int k=0;k<=O;k++)
 			{
+				//to fill up the table 
+				//filling the first row and first coloum
 				if(i==0||j==0||k==0)
 				{
 					lookup[i][j][k]=0;
 				}
 				else
 				{
+					//note that not X[i-1]==Y[j-1]==Z[k-1]
 					if(X[i-1]==Y[j-1]&&Y[j-1]==Z[k-1])
 					{
 						lookup[i][j][k]=lookup[i-1][j-1][k-1]+1;
