@@ -47,7 +47,7 @@ class Graph
 					Adj_list[a_edge.dest].push_back(a_edge.src);
 				}
 			}
-			void DFS(vector<bool> &visited,int i)
+			void BFS(vector<bool> &visited,int i)
 			{
 				queue<int> neigh_nodes;  //neighbour or adj nodes
 				neigh_nodes.push(i);
@@ -69,7 +69,7 @@ class Graph
 				}
 				
 			}
-			void disp_DFS()
+			void disp_BFS()
 			{
 				vector < bool > visited(N_nodes,false);
 				//Not used for each loop because to initialise of visited. Use of visited makes it difficult. 
@@ -78,7 +78,7 @@ class Graph
 				{
 					if(!visited[i])
 					{
-						DFS(visited,i);
+						BFS(visited,i);
 					}
 				}
 			}
@@ -98,7 +98,7 @@ int main()
 		Edj_list.push_back(Edges(src,dest));
 	}
 	Graph graph(Edj_list,N_nodes);
-	graph.disp_DFS();
+	graph.disp_BFS();
 }
 /*
 	Very very bad attempt
