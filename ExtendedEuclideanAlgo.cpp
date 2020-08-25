@@ -4,7 +4,7 @@
 using namespace std;
 void ExtendedEuclideanAlgo(int x,int y,int a,int b)
 {
-	while(b)  //note that it is not "y" 
+	while(b)  //note that it is not y
 	{
 		swap(x,y);
 		y=y-x*(a/b);

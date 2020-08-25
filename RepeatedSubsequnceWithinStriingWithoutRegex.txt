@@ -1,0 +1,33 @@
+/*
+	Check if repeated subsequence present within the string. subsequence length must be atleast two.
+	example xybxb  contains (xb as repeated subsequence)
+*/
+#include <bits/stdc++.h>
+using namespace std;
+bool palindrome_check(string str)
+{
+	int i=0,j=str.length()-1;
+	while(i<j)
+	{
+		if(str[i++]!=str[j--]) return false;
+	}
+	return true;
+}
+bool repeated_subseq(string str)
+{
+	unordered_map<char,int> map;
+	for(int i=0;i<str.length();++i)
+		if(++map[str[i]]>=3) return true; //conforms that atleast a character occurs more than two times which itself can be considered as subsequence
+		string occurred="";
+	for(pair p:map)
+	{
+		if(p.second>=1)
+			occurred.push_back(p.first);   //storing strings having atleast one (repeated) occurance;
+	}
+	return !palindrome_check(occurred);
+}
+int main()
+{
+	string str="xybxb";
+	cout<<std::boolalpha<<repeated_subseq(str);
+}
